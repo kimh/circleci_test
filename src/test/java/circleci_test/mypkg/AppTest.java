@@ -10,6 +10,9 @@ import junit.framework.TestSuite;
 public class AppTest
     extends TestCase
 {
+
+	App app;
+
     /**
      * Create the test case
      *
@@ -28,18 +31,26 @@ public class AppTest
         return new TestSuite( AppTest.class );
     }
 
-    /**
+    @Override
+	protected void setUp() throws Exception {
+    	app = new App();
+	}
+
+	/**
      * Rigourous Test :-)
      */
     public void testApp1()
     {
-    	App app = new App();
     	assertEquals("Hello World, CircleCI!", app.sayHello("CircleCI"));
     }
 
     public void testApp2()
     {
-    	App app = new App();
     	assertEquals("Hello World, GitHub!", app.sayHello("GitHub"));
+    }
+
+    public void testApp3()
+    {
+    	assertEquals("Hello World, ZenHub!", app.sayHello("ZenHub"));
     }
 }
