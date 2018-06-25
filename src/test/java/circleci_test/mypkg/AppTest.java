@@ -7,7 +7,7 @@ import junit.framework.TestSuite;
 /**
  * Unit test for simple App.
  */
-public class AppTest 
+public class AppTest
     extends TestCase
 {
     /**
@@ -31,8 +31,15 @@ public class AppTest
     /**
      * Rigourous Test :-)
      */
-    public void testApp()
+    public void testApp1()
     {
-        assertTrue( true );
+    	App app = new App();
+    	assertEquals("Hello World, CircleCI!", app.sayHello("CircleCI"));
+    }
+
+    public void testApp2()
+    {
+    	App app = new App();
+    	assertEquals("Hello World, GitHub!", app.sayHello("GitHub"));
     }
 }
