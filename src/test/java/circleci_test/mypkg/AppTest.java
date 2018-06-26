@@ -51,6 +51,6 @@ public class AppTest
 
     public void testApp3()
     {
-    	assertEquals("Hello World, ZenHub!", app.sayHello("ZenHub"));
+    	assertEquals("Hello World, ZenHub2!", app.sayHello("ZenHub2"));
     }
 }
