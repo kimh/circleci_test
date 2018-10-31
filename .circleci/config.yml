@@ -7,7 +7,7 @@ jobs:
   build:
     docker:
       # specify the version you desire here
-      - image: circleci/openjdk:8-jdk
+      - image: circleci/openjdk@sha256:314c68fdea1aad957dfe32e2d5d813a443128cf9036dc1b9ef8d73e6f472613c
       
       # Specify service dependencies here if necessary
       # CircleCI maintains a library of pre-built images
