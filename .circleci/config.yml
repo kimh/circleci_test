@@ -14,7 +14,7 @@ jobs:
           MYSQL_ALLOW_EMPTY_PASSWORD: yes
           MYSQL_ROOT_PASSWORD: ''
           MYSQL_DATABASE: circleci
-        entrypoint: ["--ip=192.168.0.2", "ndb_mgmd"]
+        entrypoint: ["--ip=192.168.0.2"]
 
       - image: mysql/mysql-cluster:7.6.8-1.1.8-cluster
         environment:
@@ -22,7 +22,7 @@ jobs:
           MYSQL_ALLOW_EMPTY_PASSWORD: yes
           MYSQL_ROOT_PASSWORD: ''
           MYSQL_DATABASE: circleci
-        entrypoint: ["--ip=192.168.0.3", "ndbd"]
+        entrypoint: ["--ip=192.168.0.3"]
 
       - image: mysql/mysql-cluster:7.6.8-1.1.8-cluster
         environment:
@@ -30,7 +30,7 @@ jobs:
           MYSQL_ALLOW_EMPTY_PASSWORD: yes
           MYSQL_ROOT_PASSWORD: ''
           MYSQL_DATABASE: circleci
-        entrypoint: ["--ip=192.168.0.4", "ndbd"]
+        entrypoint: ["--ip=192.168.0.4"]
 
       - image: mysql/mysql-cluster:7.6.8-1.1.8-cluster
         environment:
@@ -38,7 +38,7 @@ jobs:
           MYSQL_ALLOW_EMPTY_PASSWORD: yes
           MYSQL_ROOT_PASSWORD: ''
           MYSQL_DATABASE: circleci
-        entrypoint: ["--ip=192.168.0.10", "mysqld"]
+        entrypoint: ["--ip=192.168.0.10"]
 
 
     working_directory: ~/repo
