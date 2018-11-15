@@ -9,8 +9,8 @@ jobs:
       - image: circleci/openjdk@sha256:314c68fdea1aad957dfe32e2d5d813a443128cf9036dc1b9ef8d73e6f472613c
       
       # 
-      # - image: mysql/mysql-cluster:7.6.8-1.1.8-cluster
-      - image: circleci/mysql:8.0.13-ram
+      - image: mysql/mysql-cluster:7.6.8-1.1.8-cluster
+      #- image: circleci/mysql:8.0.13-ram
         environment:
           MYSQL_TCP_PORT: 3360
           MYSQL_ALLOW_EMPTY_PASSWORD: yes
