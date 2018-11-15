@@ -10,12 +10,12 @@ jobs:
       
       # 
       - image: mysql/mysql-cluster:7.6.8-1.1.8-cluster
-      #- image: circleci/mysql:8.0.13-ram
         environment:
           MYSQL_TCP_PORT: 3360
           MYSQL_ALLOW_EMPTY_PASSWORD: yes
           MYSQL_ROOT_PASSWORD: ''
           MYSQL_DATABASE: circleci
+        command: [--log-error]
 
     working_directory: ~/repo
 
