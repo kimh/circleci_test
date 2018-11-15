@@ -8,14 +8,38 @@ jobs:
     docker:
       - image: circleci/openjdk@sha256:314c68fdea1aad957dfe32e2d5d813a443128cf9036dc1b9ef8d73e6f472613c
       
-      # 
       - image: mysql/mysql-cluster:7.6.8-1.1.8-cluster
         environment:
           MYSQL_TCP_PORT: 3360
           MYSQL_ALLOW_EMPTY_PASSWORD: yes
           MYSQL_ROOT_PASSWORD: ''
           MYSQL_DATABASE: circleci
-        command: [--log-error]
+        entrypoint: ["--ip=192.168.0.2", "ndb_mgmd"]
+
+      - image: mysql/mysql-cluster:7.6.8-1.1.8-cluster
+        environment:
+          MYSQL_TCP_PORT: 3360
+          MYSQL_ALLOW_EMPTY_PASSWORD: yes
+          MYSQL_ROOT_PASSWORD: ''
+          MYSQL_DATABASE: circleci
+        entrypoint: ["--ip=192.168.0.3", "ndbd"]
+
+      - image: mysql/mysql-cluster:7.6.8-1.1.8-cluster
+        environment:
+          MYSQL_TCP_PORT: 3360
+          MYSQL_ALLOW_EMPTY_PASSWORD: yes
+          MYSQL_ROOT_PASSWORD: ''
+          MYSQL_DATABASE: circleci
+        entrypoint: ["--ip=192.168.0.4", "ndbd"]
+
+      - image: mysql/mysql-cluster:7.6.8-1.1.8-cluster
+        environment:
+          MYSQL_TCP_PORT: 3360
+          MYSQL_ALLOW_EMPTY_PASSWORD: yes
+          MYSQL_ROOT_PASSWORD: ''
+          MYSQL_DATABASE: circleci
+        entrypoint: ["--ip=192.168.0.10", "mysqld"]
+
 
     working_directory: ~/repo
 
