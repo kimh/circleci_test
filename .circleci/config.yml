@@ -52,6 +52,7 @@ jobs:
       MAVEN_OPTS: -Xmx2400m
     
     steps:
+      - run: sleep 3600
       - checkout
 
       # Download and cache dependencies
